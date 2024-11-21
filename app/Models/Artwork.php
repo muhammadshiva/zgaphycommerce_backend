@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
@@ -42,7 +43,7 @@ class Artwork extends Model
     }
 
     /**
-     * Get the user that owns the Artwork
+     * Get the category that owns the Artwork
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -50,6 +51,18 @@ class Artwork extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    /**
+     * Get the stock associated with the Artwork
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function stock(): HasOne
+    {
+        return $this->hasOne(Stock::class);
+    }
+
+
 
     /**
      * Automatically generate artwork_code before saving.

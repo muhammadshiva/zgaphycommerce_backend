@@ -33,8 +33,8 @@ class Category extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function user(): HasOne
+    public function artwork(): HasOne
     {
-        return $this->hasOne(Artwork::class, 'foreign_key', 'local_key');
+        return $this->hasOne(Artwork::class);
     }
 }
