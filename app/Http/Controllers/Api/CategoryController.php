@@ -16,7 +16,18 @@ class CategoryController extends Controller
         return response()->json(
             [
                 'success' => true,
-                'message' => 'Get all categories',
+                'message' => 'Get all categories successfully',
+                'data' => $category,
+            ]
+        );
+    }
+
+    public function show(Category $category): JsonResponse
+    {
+        return response()->json(
+            [
+                'success' => true,
+                'message' => 'Get detail category successfully',
                 'data' => $category,
             ]
         );
