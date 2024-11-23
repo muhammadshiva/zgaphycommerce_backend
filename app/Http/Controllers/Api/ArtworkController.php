@@ -21,7 +21,7 @@ class ArtworkController extends Controller
         ]);
     }
 
-    public function store(Artwork $artwork): JsonResponse
+    public function show(Artwork $artwork): JsonResponse
     {
         return response()->json([
             'success' => true,
