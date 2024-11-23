@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ArtworkController;
 use App\Http\Controllers\Api\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -13,5 +14,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 Route::resource('category', CategoryController::class)->only(['index', 'show']);
+Route::resource('artwork', ArtworkController::class)->only(['index', 'show']);
+
 
 require __DIR__ . '/auth.php';
