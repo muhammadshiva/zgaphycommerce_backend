@@ -23,6 +23,8 @@ class ArtworkController extends Controller
 
     public function show(Artwork $artwork): JsonResponse
     {
+        $artwork->load(['category', 'stock']);
+
         return response()->json([
             'success' => true,
             'message' => 'Get detail artwork successfully',

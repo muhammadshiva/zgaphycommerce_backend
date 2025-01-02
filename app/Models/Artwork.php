@@ -73,7 +73,10 @@ class Artwork extends Model
         return $this->hasMany(Transaction::class);
     }
 
-
+    public function collector(): HasMany
+    {
+        return $this->hasMany(Collector::class);
+    }
 
     /**
      * Automatically generate artwork_code before saving.

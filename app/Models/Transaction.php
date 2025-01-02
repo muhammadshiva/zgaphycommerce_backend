@@ -17,6 +17,11 @@ class Transaction extends Model
         'status',
     ];
 
+    public function setArtworkIdAttribute($value){
+        $artwork = Artwork::find($value);
+
+    }
+
     /**
      * Get the user that owns the Transaction
      *
